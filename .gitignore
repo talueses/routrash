@@ -34,3 +34,10 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+
+
+*.log
+*.pot
+*.pyc
+local_settings.py
