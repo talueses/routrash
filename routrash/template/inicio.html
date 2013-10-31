@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { width: 80%;
+        height: 80%;
+      }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0NXMcMYeNcNYI9oSUTLHpBTP8DEztM7c&sensor=true">
+    </script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+
+ 
+
+$(document).on('ready',function(){
+function placeMarker(location)
+{
+  pos=ruta.length;
+  console.log(location.lb);
+  console.log(location.mb);
+  ruta[pos]=location;
+  console.dir(ruta);
+}
+
+
+
+
+
+
+
+   var mapOptions = {
+    center: new google.maps.LatLng(10.490178, -66.8608714),
+    zoom: 15,
+    mapTypeId: google.maps.MapTypeId.ROADMAPS
+  };
+     
+      var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+google.maps.event.addListener(map, 'click', function(event) {
+    placeMarker(event.latLng);
+    lineas = new google.maps.Polyline({
+        path: ruta,
+         map: map,
+         strokeColor: '#222000',
+         strokeWeight: 4,
+         strokeOpacity: 0.6,
+         clickable: false
+    });
+  });
+
+
+             /* var ruta = [
+        new google.maps.LatLng(10.490178, -66.8608714),
+        new google.maps.LatLng(14.6203, 101.29),
+        new google.maps.LatLng(15.0203, 102.09)
+    ];*/
+        $('#consultar').on('click',function(){
+     gozilla3 = new google.maps.Marker({
+            position: map.getCenter(),
+            map: map,    
+           title: 'GodZZilla!!'               
+        });
+
+
+ 
+   /* var lineas = new google.maps.Polyline({
+        path: ruta,
+         map: map,
+         strokeColor: '#222000',
+         strokeWeight: 4,
+         strokeOpacity: 0.6,
+         clickable: false
+    });
+     /*   var desde=$('#desde').val();
+var hacia = new google.maps.LatLng(latitude,longitude);
+
+//renderizo ruta
+ren = new google.maps.DirectionsRenderer( {'draggable':true} );
+ren.setMap(map);
+
+ser = new google.maps.DirectionsService();
+ 
+ser.route({
+ 
+'origin': desde,
+ 
+'destination': hacia,
+ 
+'travelMode': google.maps.DirectionsTravelMode.DRIVING
+ 
+},function(res,sts){
+ 
+if(sts=='OK')ren.setDirections(res);
+ 
+else alert("No se pudo trazar la ruta! Chequee su ubicación de partida");
+ 
+
+
+
+});*/
+
+      });});
+      
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+    <div>
+    <input type="text" id="desde">
+    <button id="consultar"> Consultar </button>
+    </div>
+  </body>
+</html>
