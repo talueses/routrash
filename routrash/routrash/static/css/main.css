@@ -1,0 +1,79 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+.footer{
+	height:30px;
+	text-align: center;
+	background-color: #222222;
+	color: #fff;
+}
+#map-canvas{
+	height: 100%;
+}
+.myMap{
+	padding: 0;
+	height: 100%;
+}
+.mainForm{
+	height: 100%;
+	margin-bottom: 0;
+}
+.row {
+	height: 100%;
+}
+
+#contenido{
+	width:100%;
+}
+.side
+{
+	width: 20%;
+	height: 100%;
+	float: left;
+	position: absolute;
+	background:black;
+	text-align: center;
+	color: white;
+	padding-left: 1em;
+	padding-top: 1em;
+	padding-right: 1em;
+}
+#register {
+	margin-top:40px;
+	text-align: center;
+	color:#fff;
+	padding:2em ;
+	border-radius:1em;
+}
+
+#solapa-cerrar{
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 16px 32px 16px 0;
+	border-color: transparent #ff3c00 transparent transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
